@@ -1,0 +1,4 @@
+Search
+ [x] Get address with zip code with data set "Nossa localidade"
+ [x] Get address with zip code with data set "Outra localidade"
+
