@@ -2,15 +2,19 @@
 
 namespace jodfedlet\buscar_cep;
 
+use jodfedlet\buscar_cep\ws\ViaCep;
+
 class Search
 {
-    const URL = 'https://viacep.com.br/ws/';
-
-    public function getAddressWithZipCode(string $zipCode) : array
+    final function getAddressWithZipCode(string $zipCode) : array
     {
         $zipCode = preg_replace("/[^0-9]/", "",$zipCode);
+        return $this->getFromServer($zipCode);
+    }
 
-        $result = file_get_contents(self::URL.$zipCode.'/json');
-        return json_decode($result, true);
+    private function getFromServer(string $zipCode) : array
+    {
+        $viaCep = new ViaCep();
+        return $viaCep->get($zipCode);
     }
 }
