@@ -21,16 +21,32 @@ require_once 'vendor/autoload.php';
 
 use \jodfedlet\buscar_cep\Search;
 
-$search = new Search();
-$res = $search->getAddressWithZipCode(89809750);
-
-print_r($res);
+try{
+    $search = new Search();
+    $res = $search->getAddressWithZipCode("59622-210"); //or "59622210"
+    print_r($res);
+} catch(Exception $exception) {
+    print($exception->getMessage());
+    exit;
+}
 ```
 
 Deve imprimir o seguinte resultado:
 
 ```
-
+Array
+(
+    [cep] => 59622-210
+    [logradouro] => Rua José Lopes da Fé
+    [complemento] => 
+    [bairro] => Santo Antônio
+    [localidade] => Mossoró
+    [uf] => RN
+    [ibge] => 2408003
+    [gia] => 
+    [ddd] => 84
+    [siafi] => 1759
+)
 ```
 
 ## Como contribuir
