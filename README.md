@@ -5,7 +5,7 @@ Buscar os dados de endereço a partir de um CEP.
 
 Para o uso no seu projeto, é preciso:
 
-1. Ter o php >= 7.4 instalado no seu servidor;
+1. Ter o php >= 7.2.0 instalado no seu servidor;
 2. Instalar  a dependência via composer
 
 ```
